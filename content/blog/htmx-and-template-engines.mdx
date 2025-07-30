@@ -1,0 +1,142 @@
+---
+title: "HTMX Saved Template Engines"
+date: "2024-12-27"
+excerpt: "The impact of HTMX on template engines - a look at the future of web development and how we can build dynamic web applications"
+author: "Dennis Ivy"
+readTime: "6 min read"
+tags: ["HTMX", "Web Development"]
+---
+
+
+I've joined the HTMX hype train, and for good reason. If you use Django's built-in template engine or one similar to it, then I believe HTMX can be just the solution you need once your template engine reaches its limit.
+
+Template engines are a great tool, but they also have some obvious limitations when it comes to building dynamic web apps. HTMX solves many of those limitations without the need to write a bunch of our own Javascript code.
+
+For several years I had completely abandoned template engines and dismissed them as a tool only useful for rendering content. I reached for a frontend framework for any dynamic updates requiring more than a few lines of JavaScript. I didn't like that this was the case,
+ but I still have nightmares from the time I tried to build a massive application that required an extremely interactive UI. As a Python developer I nearly pulled my hair out trying to learn Javascript in order to build interactive features into my application.
+
+Knowing the pain of having to write custom Javascript in conjunction with a template engine, especially as a non-Javascript developer at the time, is exactly why I fell in love with HTMX.
+What HTMX brings to the table is a way for developers to extend the capabilities of template engines where they fall short. So now we can not only render out content dynamically, we can create an interactive experience within our UI while writing less or no javascript code.
+
+### Template engines in a nutshell
+
+Template engines work great for rendering out content dynamically. The idea is simple. When a particular endpoint is requested, we trigger a function that is responsible for returning a template to the client. If we want to populate the page with dynamic data, we can make some kind of request to a database and pass in the data in the response with the template, making the data available within the template. This data can then be rendered in the template with loops, conditions, and variables.
+
+![](./images/htmx-saved-template-engines/template-engine.png)
+
+### Where template engines fall short
+
+The challenge begins when you want to send data to the server and update content dynamically, without loading a new page. In this scenario we have two options:
+
+-   **Option 1**— Write your own custom javascript for dynamic interactions
+-   **Option 2**— Build an API layer between your backend & use a frontend framework.
+
+The first option is one that can work but does require you to be quite familiar with javascript. Otherwise, you’ll end up writing a bunch of clunky, insecure code. I’ve done this before, and I’ll say even now, as someone who is very experienced with Javascript, I still don’t use this option since you’ll be reinventing the wheel and will only add complexity to your project.
+
+The second option is one that is a viable solution for many and one that I would recommend in most cases. However, remember that many devs who are building with template engines come from a non-javascript background. This includes Python, Go, Ruby, PHP, and many other types of devs. So whether it’s developers coming from a different ecosystem or developers just wanting to continue using their favorite template engine, this option requires them to switch to an entirely new approach and commit to an ecosystem that relies heavily on writing javascript code.
+
+So what if you didn’t have to settle for option one or two? This is where HTMX comes into play, providing us with option #3.
+
+### HTMX in a nutshell
+
+HTMX is a Javascript library that allows us to build dynamic web apps while writing less Javascript. It extends HTML's capabilities by providing custom attributes so we can perform event-driven AJAX requests right within our HTML without writing a single line of Javascript.
+
+With these requests, HTMX does not expect JSON data in response, as you might be used to, but HTML content blocks. These HTML blocks can then be used to swap out parts of our UI for new content.
+
+![](./images/htmx-saved-template-engines/htmx-request-respone.png)
+
+### HTMX with a template engine
+
+Lets look at this example, which uses HTMX with the built in Django template engine.
+
+The objective is to make any item within the left-side column clickable and update the page content on the right side with the item details without refreshing the page.
+
+![](./images/htmx-saved-template-engines/htmx-swap.png)
+
+To accomplish this task, I will render out each item dynamically in a for loop, and within the snippet I will add in some custom HTMX attributes to this div.
+
+```html
+<div id="post--snippets">
+    {% for post in posts %}
+    <div
+        hx-trigger="click"
+        hx-get="/post/{{post.id}}"
+        hx-target="#page--container"
+        hx-swap="innerHTML"
+    >
+        <strong>{{post.title}}</strong>
+        <small>{{post.body | truncatechars:20}}</small>
+    </div>
+    {% endfor %}
+</div>
+
+<div id="page--container">
+    <!--Post details here 👈-->
+</div>
+```
+
+Lets break down what each attribute does:
+
+-   `hx-trigger` - Defines which event triggers the request
+-   `hx-get` - Defines the http verb & endpoint
+-   `hx-target` - Defines where the new content will be swapped into
+-   `hx-swap` - Defines how we want to swap the content
+
+This request will take whatever response we get from the `/post/{{post.id}}` endpoint and will swap the `innerHTML` of the `#page--container` div, creating a single page application type of swap in our app.
+
+There are a few benefits to performing requests like this that become obvious right away.
+
+1. **Faster page speed**, since we don't need to re-query data and re-render the entire page.
+
+2. **A Better user experience** since we can keep the DOM painted while requesting new data. This allows us to make use of things like load spinners.
+
+### Swapping multiple elements
+
+With HTMX, we can be extremely flexible with how we return content and extract data from these responses.
+
+In any given response we can return multiple elements, therefor updating more than one piece of the UI in a single request. In this scenario we can let the elements in the response dictate which part of the UI they will update and how to perform the swap.
+
+```html
+<div id="total" hx-swap-oob="true">Total: {{post_total}}</div>
+
+<div hx-swap-oob="innerHTML:#page--container">
+    <!-- PAGE CONTENT -->
+</div>
+```
+
+In the above example we return a single HTML template with multiple elements in order to perform an out-of-bounds swap. In this case the following will happen:
+
+-   `hx-swap-oob="true"` - This will find and replace the current item that contains the id of "total"
+-   `hx-swap-oob="innerHTML:#page--container"` - This lets us manually target the item to be swapped with a css selector.
+
+### Selecting Elements from a response
+
+Instead of creating a custom response for each request, HTMX allows us to target and select specific parts of a response to use to perform a swap. By default, we have access to the `hx-select` attribute which lets us use a query selector to target a specific item in a response.
+
+```html
+<button hx-get="/info" hx-select="#info-detail" hx-swap="outerHTML">
+    Get Info!
+</button>
+```
+
+So even if the response contains multiple items, we would only use the element with the id of `info-detail`, ignoring any other content in the response.
+
+### Multi-select extension
+
+If we want to select multiple items from a response, we can install the `multi-select` package, which lets us use multiple query selectors to extract more than one element from a response.
+
+```html
+<button hx-get="/example" hx-swap="multi:#id1,#id2:beforeend,#id3:outerHTML">
+    Click to swap #id1, #id2, and #id3 content
+</button>
+```
+
+<div class="line-break"></div>
+
+The beauty of all this is that we get the flexibility you'd normally get with a client-side framework within your template engine.
+
+So does this mean we can replace frontend frameworks altogether?
+
+No.
+
+While I, along with many others, am still stress testing and pushing the limits of HTMX, I do believe there are many cases where you may need more. What those limitations are, I don't know yet; only time will tell as we test and evolve. What I do know is that HTMX makes working within the template engine environment much easier for many devs and, in many cases, will provide the exact tools devs will need to stay within that ecosystem.
