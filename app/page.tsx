@@ -20,11 +20,11 @@ export default function Home() {
 
             <div className="space-y-6 text-foreground/80 leading-relaxed">
               <div className="relative">
-                <div className="text-8xl font-serif text-muted-foreground/30 leading-none float-left mr-4 -mt-2 -ml-2">
+                <div className="text-8xl font-serif text-muted-foreground/30 dark:text-muted-foreground/50 leading-none float-left mr-4 -mt-2 -ml-2">
                   H
                 </div>
                 <p className="text-base lg:text-md leading-relaxed">
-                  i, I'm Dennis Ivy, Co-host of the Travery Media YT Channel, developer advocate for Appwrite and a Udemy Instructor.
+                  i, I'm Dennis Ivy, Co-host of the Travery Media YT channel, developer advocate for Appwrite and a Udemy Instructor.
                 </p>
               </div>
 
@@ -42,7 +42,7 @@ export default function Home() {
                 </ul>
             </div>
 
-            <div>
+            {/* <div>
               <Link href="/blog">
                 <Button 
                   variant="outline" 
@@ -52,7 +52,7 @@ export default function Home() {
                 </Button>
               </Link>
     
-            </div>
+            </div> */}
           </div>
 
           {/* Right Column - Image */}
