@@ -30,7 +30,7 @@ export default function Home() {
 
               <p className="text-base lg:text-md leading-relaxed">
                 If you're looking to connect, you can find me online:</p>
-              <br/>
+          
                 <br/>
                 <ul>
                   <li>On <a href="https://x.com/dennisivy11" target="_blank"> Twitter/X</a></li>
