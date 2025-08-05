@@ -24,7 +24,7 @@ export default function Home() {
                   H
                 </div>
                 <p className="text-base lg:text-md leading-relaxed">
-                  i, I'm Dennis Ivy, Co-host of the Travery Media YT channel, developer advocate for Appwrite and a Udemy Instructor.
+                  i, I'm Dennis Ivy, Co-host of the Traversy Media YT channel, developer advocate for Appwrite and a Udemy Instructor.
                 </p>
               </div>
 
