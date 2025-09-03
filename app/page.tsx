@@ -55,6 +55,8 @@ export default function Home() {
             </div> */}
           </div>
 
+    
+
           {/* Right Column - Image */}
           <div className="relative lg:col-span-1">
             <div className="relative z-10">
@@ -89,6 +91,19 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Featured video */}
+      <div className="max-w-4xl mx-auto mt-20">
+        <div className="relative w-full h-0 pb-[56.25%]">
+          <iframe 
+            src="https://www.youtube-nocookie.com/embed/3uWfmFCwmII?si=OTKHsi3mrIb1q48A"
+            className="absolute top-0 left-0 w-full h-full"
+            title="Dennis Ivy - Why good developers fail interviews"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+      
             {/* Photo Grid Section */}
       <div className="max-w-4xl mx-auto mt-20">
         <div className="columns-2 md:columns-3 lg:columns-3 gap-4">
