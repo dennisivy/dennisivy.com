@@ -24,7 +24,22 @@ export default function Home() {
                   H
                 </div>
                 <p className="text-base lg:text-md leading-relaxed">
-                  i, I'm Dennis Ivy, Co-host of the Traversy Media YT channel, developer advocate for Appwrite and a Udemy Instructor.
+                  i, I'm Dennis Ivy, Co-host of the{' '}
+                  <span className="relative inline-block text-black dark:text-white font-semibold">
+                    Traversy Media
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500"></span>
+                  </span>
+                  {' '}YT channel,{' '}
+                  <span className="relative inline-block text-black dark:text-white font-semibold">
+                    developer advocate
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500"></span>
+                  </span>
+                  {' '}for Appwrite and a Udemy{' '}
+                  <span className="relative inline-block text-black dark:text-white font-semibold">
+                    Instructor
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500"></span>
+                  </span>
+                  .
                 </p>
               </div>
 
