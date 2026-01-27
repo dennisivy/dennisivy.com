@@ -14,7 +14,7 @@ export default function Home() {
                 DENNIS IVY
               </h1>
               <p className="text-sm tracking-[0.3em] uppercase text-muted-foreground font-medium">
-                BUILDING APPWRITE & TRAVERSY MEDIA
+                Co-hosting Traversy Media
               </p>
             </div>
 
@@ -34,12 +34,7 @@ export default function Home() {
                     developer advocate
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500"></span>
                   </span>
-                  {' '}for Appwrite and a Udemy{' '}
-                  <span className="relative inline-block text-black dark:text-white font-semibold">
-                    Instructor
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500"></span>
-                  </span>
-                  .
+                  , developer educator/instructor.
                 </p>
               </div>
 
@@ -52,7 +47,6 @@ export default function Home() {
                   <li>On <a href="https://www.linkedin.com/in/dennis-ivanov/" target="_blank">LinkedIn</a></li>
                   <li>Co-hosting the <a href="https://www.youtube.com/@TraversyMedia" target="_blank">@TraversyMedia</a> YouTube channel</li>
                   <li>Posting videos on my personal channel at <a href="https://www.youtube.com/@dennisivy" target="_blank">@dennisivy</a></li>
-                  <li>Hosting the <a href="https://www.youtube.com/@appwrite" target="_blank">Appwrite YouTube channel</a></li>
                   <li>On <a href="https://github.com/divanov11" target="_blank">GitHub</a></li>
                 </ul>
             </div>
@@ -124,8 +118,8 @@ export default function Home() {
         <div className="columns-2 md:columns-3 lg:columns-3 gap-4">
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-danny-thompson.png"
-              alt="Dennis with Danny and Thompson"
+              src="/images/base/dennis-ivy-paul-copplestone-supabase-vercel-ship-2024.jpeg"
+              alt="Dennis Ivy with Paul Copplestone CEO of Supabase at Vercel Ship 2024"
               width={400}
               height={300}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
@@ -133,8 +127,17 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-francesco.png"
-              alt="Dennis with Francesco"
+              src="/images/base/dennis-ivy-danny-thompson.png"
+              alt="Dennis Ivy with Danny Thompson"
+              width={400}
+              height={300}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
+            />
+          </div>
+          <div className="break-inside-avoid mb-4">
+            <Image
+              src="/images/base/dennis-ivy-francesco.png"
+              alt="Dennis Ivy with Francesco"
               width={300}
               height={300}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
@@ -142,7 +145,7 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-chris-kapehe-sev.jpeg"
+              src="/images/base/dennis-ivy-chris-kapehe-sev.jpeg"
               alt="Dennis with Chris, Kapehe, and Sev"
               width={400}
               height={267}
@@ -151,8 +154,8 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-speaking.png"
-              alt="Dennis speaking"
+              src="/images/base/dennis-ivy-speaking.png"
+              alt="Dennis Ivy Developer Advocate speaking at Vapi headquarters about Voice AI"
               width={300}
               height={300}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
@@ -160,8 +163,8 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-brad-sulamita.jpeg"
-              alt="Dennis with Brad and Sulamita"
+              src="/images/base/dennis-ivy-brad-sulamita.jpeg"
+              alt="Dennis Ivy with Brad Traversy from Traversy Media and Sulamita"
               width={300}
               height={400}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
@@ -169,7 +172,7 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-eldad-christy.jpeg"
+              src="/images/base/dennis-ivy-eldad-christy.jpeg"
               alt="Dennis with Eldad and Christy"
               width={300}
               height={300}
@@ -178,19 +181,19 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-james-danny.jpeg"
-              alt="Dennis with James and Danny"
+              src="/images/base/dennis-ivy-andrea-griffiths-github-appwrite-commit-your-code-conference.jpeg"
+              alt="Dennis with Andrea Griffiths at Commit Your Code conference"
               width={400}
-              height={200}
+              height={300}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
             />
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennisivy-tadas-jessehall-alex.jpeg"
-              alt="Dennis with Tadas, Jesse Hall, and Alex"
+              src="/images/base/dennis-ivy-kedasha-kerr-github-universe.jpeg"
+              alt="Dennis with Kedasha Kerr at Github Universe"
               width={400}
-              height={267}
+              height={300}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
             />
           </div>
