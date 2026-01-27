@@ -25,14 +25,12 @@ export default function Home() {
                 </div>
                 <p className="text-base lg:text-md leading-relaxed">
                   i, I'm Dennis Ivy, Co-host of the{' '}
-                  <span className="relative inline-block text-black dark:text-white font-semibold">
+                  <span className="text-black dark:text-white font-semibold">
                     Traversy Media
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500"></span>
                   </span>
                   {' '}YT channel,{' '}
-                  <span className="relative inline-block text-black dark:text-white font-semibold">
+                  <span className="text-black dark:text-white font-semibold">
                     developer advocate
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-green-500"></span>
                   </span>
                   , developer educator/instructor.
                 </p>
@@ -47,7 +45,7 @@ export default function Home() {
                   <li>On <a href="https://www.linkedin.com/in/dennis-ivanov/" target="_blank">LinkedIn</a></li>
                   <li>Co-hosting the <a href="https://www.youtube.com/@TraversyMedia" target="_blank">@TraversyMedia</a> YouTube channel</li>
                   <li>Posting videos on my personal channel at <a href="https://www.youtube.com/@dennisivy" target="_blank">@dennisivy</a></li>
-                  <li>On <a href="https://github.com/divanov11" target="_blank">GitHub</a></li>
+                  <li>On <a href="https://github.com/dennisivy" target="_blank">GitHub</a></li>
                 </ul>
             </div>
 
@@ -136,15 +134,6 @@ export default function Home() {
           </div>
           <div className="break-inside-avoid mb-4">
             <Image
-              src="/images/base/dennis-ivy-francesco.png"
-              alt="Dennis Ivy with Francesco"
-              width={300}
-              height={300}
-              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
-            />
-          </div>
-          <div className="break-inside-avoid mb-4">
-            <Image
               src="/images/base/dennis-ivy-chris-kapehe-sev.jpeg"
               alt="Dennis with Chris, Kapehe, and Sev"
               width={400}
@@ -193,6 +182,15 @@ export default function Home() {
               src="/images/base/dennis-ivy-kedasha-kerr-github-universe.jpeg"
               alt="Dennis with Kedasha Kerr at Github Universe"
               width={400}
+              height={300}
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
+            />
+          </div>
+          <div className="break-inside-avoid mb-4">
+            <Image
+              src="/images/base/dennis-ivy-francesco.png"
+              alt="Dennis Ivy with Francesco"
+              width={300}
               height={300}
               className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 grayscale hover:grayscale-0 rounded-lg"
             />
