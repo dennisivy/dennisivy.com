@@ -15,6 +15,7 @@
     "@hookform/resolvers": "^3.9.0",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
+    "@mux/mux-player-react": "^3.11.4",
     "@next/mdx": "^13.5.1",
     "@next/swc-wasm-nodejs": "13.5.1",
     "@radix-ui/react-accordion": "^1.2.0",

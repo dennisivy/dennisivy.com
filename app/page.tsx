@@ -1,6 +1,9 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+
+const MuxPlayer = dynamic(() => import('@mux/mux-player-react'), { ssr: false });
 
 export default function Home() {
   return (
@@ -98,15 +101,18 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Featured video */}
+      {/* Featured video - set NEXT_PUBLIC_MUX_PLAYBACK_ID in .env.local to override */}
       <div className="max-w-4xl mx-auto mt-20">
-        <div className="relative w-full h-0 pb-[56.25%]">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/3uWfmFCwmII?si=OTKHsi3mrIb1q48A"
-            className="absolute top-0 left-0 w-full h-full"
-            title="Dennis Ivy - Why good developers fail interviews"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+        <div className="overflow-hidden rounded-2xl border-2 border-border bg-border/20 shadow-xl ring-1 ring-foreground/5">
+          <MuxPlayer
+            playbackId={process.env.NEXT_PUBLIC_MUX_PLAYBACK_ID ?? 'xk000001LU01Xse1V7nKNjBVYf6FpygKfVXGj8QLdu00oJag'}
+            poster={`https://image.mux.com/${process.env.NEXT_PUBLIC_MUX_PLAYBACK_ID ?? 'xk000001LU01Xse1V7nKNjBVYf6FpygKfVXGj8QLdu00oJag'}/animated.gif?width=640&fps=10`}
+            metadata={{
+              video_title: 'Featured video',
+            }}
+            streamType="on-demand"
+            className="w-full"
+            style={{ aspectRatio: '16/9' }}
           />
         </div>
       </div>
