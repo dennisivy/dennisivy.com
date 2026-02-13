@@ -23,7 +23,7 @@ Developer Advocate with 12+ years in software engineering and developer marketin
 
 ## Work History
 
-#### Appwrite |  Nov 2023 – Jan 2025
+#### Appwrite |  Nov 2023 – Jan 2026
 
 
 Owned developer advocacy initiatives focused on product adoption, retention, and community growth, with primary responsibility for leading and operating Appwrite’s YouTube channel as a core growth and discovery platform.
